@@ -5,7 +5,9 @@ public:
         int n = piles.size();
 
         int start = 1;
-        int end =  *max_element(piles.begin(),piles.end());
+        int end = 0;
+        for (int x : piles) end = max(end, x);
+
 
         if(h == n) return end;       
 
