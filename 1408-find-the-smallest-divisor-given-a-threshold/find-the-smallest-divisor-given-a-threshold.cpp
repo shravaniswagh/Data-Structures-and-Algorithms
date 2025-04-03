@@ -12,7 +12,7 @@ public:
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int sum = summation(nums, mid);
+            int sum = summation(nums, mid,threshold);
 
             if (sum > threshold) {
                 left = mid + 1;  // Increase divisor
@@ -25,10 +25,11 @@ public:
     }
 
 private:
-    int summation(vector<int>& nums, int mid) {
+    int summation(vector<int>& nums, int mid,int threshold) {
         long long sum = 0;
         for (int num : nums) {
-            sum += (num + mid - 1) / mid;  // Equivalent to ceil(num / mid)
+            sum += (num + mid - 1) / mid;// Equivalent to ceil(num / mid)
+            if (sum > threshold) break; 
         }
         return sum;
     }
