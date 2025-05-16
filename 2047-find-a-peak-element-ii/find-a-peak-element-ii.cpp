@@ -1,5 +1,10 @@
 class Solution {
 public:
+    /*
+    so here we do binary search between the columns and we find the peak element
+    by finding the maximum element in the mid column, then we just compare it with 
+    our left and the right elements and return the answer.
+    */
     int findmax(vector<vector<int>>&mat, int n,int m,int  mid){
         int maxvalue = -1;
         int index = -1;
