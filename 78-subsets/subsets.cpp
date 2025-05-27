@@ -1,8 +1,7 @@
 class Solution {
 public:
     void dfs(int index,vector<int>nums,vector<int>&current,vector<vector<int>>&ans){
-        int n = nums.size();
-        if(index == n){
+        if(index == nums.size()){
             ans.push_back(current);
             return;
         }
